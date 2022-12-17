@@ -66,6 +66,11 @@ class HomesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def home_params
       # truyen data trong mysql
-      params.require(:home).permit(:title, :body)
+      params.require(:home).permit(:ten144, :dacdiem144, :mausac144, :kichthuoc144, :taptinhsinhhoat144, :noisong144)
     end  
+    def search
+      @query = params[:query]
+      @home = Home.where("homes.name LIKE ?",["%#{@query}%"])
+      render "index"
+    end
 end

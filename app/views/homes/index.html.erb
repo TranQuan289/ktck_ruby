@@ -1,13 +1,13 @@
 
 <p style="color: green"><%= notice %></p>
 <nav>
-<h1 class="navbar-brand">Home</h1>
+<h1 class="navbar-brand">Quan ly Ca Bien</h1>
 </div>
 <form class="form-inline d-flex justify-content-between mb-4 flex-row-reverse container">
 <div>
 <%if user_signed_in?%>
-<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
-
+<input class="form-control mr-sm-2" name ="query" type="search" placeholder="Search" aria-label="Search" >
+<button type="button" class="btn btn- success">Search</button>
 <%= link_to "Sign out", destroy_user_session_path, method: :delete ,class:"btn btn-outline-success my-2 my-sm-0"%>
 <%else%>
 <%= link_to "Sign In", new_user_session_path, class:"btn btn-success" %>
@@ -25,10 +25,22 @@
         ID
       </td>
       <td>
-        title
+        ten144
       </td>
       <td>
-        body
+        dacdiem144
+      </td>
+      <td>
+        mausac144
+      </td>
+      <td>
+        kichthuoc144
+      </td>
+      <td>
+        taptinhsinhhoat144
+      </td>
+       <td>
+        noisong144
       </td>
       <td>Action</td>
         </thead>
@@ -37,6 +49,5 @@
   
   <% @homes.each do |home| %>
     <%= render home %>
-    <%# lay home o tren . de truy xuat data %>
   <% end %>
   </table>
