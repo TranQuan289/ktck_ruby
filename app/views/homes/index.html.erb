@@ -1,0 +1,42 @@
+
+<p style="color: green"><%= notice %></p>
+<nav>
+<h1 class="navbar-brand">Home</h1>
+</div>
+<form class="form-inline d-flex justify-content-between mb-4 flex-row-reverse container">
+<div>
+<%if user_signed_in?%>
+<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" >
+
+<%= link_to "Sign out", destroy_user_session_path, method: :delete ,class:"btn btn-outline-success my-2 my-sm-0"%>
+<%else%>
+<%= link_to "Sign In", new_user_session_path, class:"btn btn-success" %>
+<%= link_to "Sign up", new_user_registration_path,class:"btn btn-secondary" %>
+<%end%>
+</div>
+<%= link_to "Create", new_home_path,class: "btn btn-primary" %>
+</form>
+</nav>
+<div id="homes">
+<table class="table container">
+<tr>
+ <thead class="thead-dark">
+      <td class="py-1">
+        ID
+      </td>
+      <td>
+        title
+      </td>
+      <td>
+        body
+      </td>
+      <td>Action</td>
+        </thead>
+  </tr>
+
+  
+  <% @homes.each do |home| %>
+    <%= render home %>
+    <%# lay home o tren . de truy xuat data %>
+  <% end %>
+  </table>

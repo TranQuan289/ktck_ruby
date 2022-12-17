@@ -1,0 +1,33 @@
+<%= form_with(model: home) do |form| %>
+  <% if home.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(home.errors.count, "error") %> prohibited this home from being saved:</h2>
+
+      <ul>
+        <% home.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+  <div>
+ <div class="form-group">
+    <label><%=form.label :title,"title"%></label>
+    <%=form.text_field :title, class:"form-control"%>
+    
+  </div>
+  <div class="form-group">
+    <label ><%=form.label :body,"body"%></label>
+     <%=form.text_field :body, class:"form-control"%>
+   
+  </div>
+  <div class="actions", class: "btn btn-outline-light btn-lg px-5">
+    <%= form.submit%>
+     </div>
+  </div>
+<% end %>
+
+
+

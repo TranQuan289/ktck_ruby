@@ -1,0 +1,25 @@
+<div id="<%= dom_id home %>">
+<table class="table container">
+
+  <thead class="thead-light">
+<tr>
+
+    <td class="py-1">
+    <%= home.id %>
+    </td>
+    <td>
+    <%= home.title%>
+    </td>
+    <td>
+    <%= home.body%>
+    </td>
+    <td class="d-flex p-2 justify-content-center align-items-center" style="gap: 10px">
+    <%= link_to "edit", edit_home_path(home) %>
+    <%= button_to "delete", home_path(home),method: :delete, form: {data: {turbo_confirm: 'Are you sure?'}}, class:"btn btn-danger" %>
+    </td>
+</tr>
+ </thead>
+</table>
+</div>
+
+
